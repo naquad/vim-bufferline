@@ -19,6 +19,7 @@ call s:check_defined('g:bufferline_fname_mod', ':t')
 call s:check_defined('g:bufferline_inactive_highlight', 'StatusLineNC')
 call s:check_defined('g:bufferline_active_highlight', 'StatusLine')
 call s:check_defined('g:bufferline_rotate', 0)
+call s:check_defined('g:bufferline_max', 0)
 
 function! bufferline#generate_string()
   return "bufferline#generate_string() is obsolete! Please consult README."

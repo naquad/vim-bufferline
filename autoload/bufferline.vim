@@ -42,6 +42,19 @@ function! s:generate_names()
     elseif g:bufferline_rotate == 3
       call bufferline#algos#active_hidden#modify(names)
     endif
+
+    if g:bufferline_max && g:bufferline_max < len(names)
+      let current_pos = 0
+
+      for i in range(0, len(names))
+        if names[i][0] == current_buffer
+          let current_pos = i
+          break
+        endif
+      endfor
+
+      let names = names[ current_pos - g:bufferline_max / 2 : current_pos + g:bufferline_max / 2 ]
+    endif
   endif
 
   return names
